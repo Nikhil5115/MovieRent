@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+    border: 1px solid seagreen;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+        </tr>
+        {% for i in temp %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td><a href='/customer/customernames/{{ i.id }}'>{{ i.name }} </a></td>
+            <td>
+                <button>
+                    <a  type="submit" href='/customer/delete_cust/{{ i.id }}'>Delete</a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<button><a  type="submit" href="/customer/addcustomer">Add Customer</a></button>
+<button><a  type="submit" href="/">To Main Page</a></button>
+</body>
+</html>
+

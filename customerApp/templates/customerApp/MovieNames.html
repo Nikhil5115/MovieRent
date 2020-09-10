@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+    border: 1px solid blue;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Movie ID</th>
+            <th>Movie Name</th>
+            <th>Availablity</th>
+
+        </tr>
+        {% for i in temp %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }} </td>
+            <td>{{ i.avail }}</td>
+            <td><button><a  type="submit" href='/customer/delete_mov/{{ i.id }}'>Delete</a></button></td>
+            <!--<td><button><a type="submit" href="/customer/showAvailableMovies/id/{{ i.ID }}" >Rent</a></button></td>-->
+
+
+        </tr>
+        {% endfor %}
+    </table>
+    <button><a  type="submit" href="/customer/add_movie">Add Movies</a></button>
+    <button><a  type="submit" href="/">To Main Page</a></button>
+{#<button><a  type="submit" href="http://127.0.0.1:8000/">To Main Page</a></button>#}
+</body>
+</html>
